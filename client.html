@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client Page</title>
+	<style type="text/css">
+	  body{
+	  	background-image: url(backblue.gif);
+	  }
+	  h1{
+	  	background-color: black;
+	  	color: white;
+	  	text-align: center;
+	  }
+	  #gohome{
+	  	font-size: 25px;
+	  	text-align: center;
+	  }
+	</style>
+</head>
+<body>
+  <div>
+  	<h1>Fortune Consultancy</h1>
+  	<h2>These below are Registered business organisations on our website:</h2>
+  	<p style="font-size: 25px;font-weight: bold;text-align: center" id ="client"></p>
+  </div><br><br><br><br><br>
+  <p id ="gohome"><a href ="index.html">Home</a></p>
+
+</body>
+<script type="text/javascript">
+	const client = document.getElementById("client");
+    const pname = localStorage.getItem('name');
+    const pEmail = localStorage.getItem('email');
+    client.innerHTML = "Company's Name: "+ pname +"  (company's Email Address : " + pEmail +")";
+</script>
+</html>

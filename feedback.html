@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feedback page</title>
+	<style type="text/css">
+	    body{
+	    	background-image: url(backblue.gif);
+	    }
+		h1{
+			background-color:black;
+			color: white;
+			text-align: center;
+		}
+		form{
+			text-align: center;
+		}
+		#gohome{
+			font-size: 25px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+        <div>
+    	<h1>Fortune Consultancy</h1>
+    	<h2>If a customer wants to Give feedback about the products offered by a registered organisation<br>he/she must fill the feedback form below:</h2>
+    	<form>
+    		Enter Your Name<br>
+    		<input type="text" name="feedName" id ="feedName"><br>
+    		Enter Name of Registered organisation you are referring to:<br>
+    		<input type="text" name="comName" id ="comName"><br>
+    		Enter Feedback here<br>
+    		<textarea cols ="30" rols ="4" name="myFeed" id="myFeed"></textarea><br>
+    		<button type ="button" id="fButton">Submit</button>
+    	</form>
+        </div><br><br><br><br><br><br><br><br><br>
+        <p id="gohome"><a href ="index.html">Home</a></p>
+
+</body>
+<script type="text/javascript">
+	const feedName = document.getElementById("feedName");
+	const comName = document.getElementById("comName");
+	const myFeed = document.getElementById("myFeed");
+	const fButton = document.getElementById("fButton");
+	const nameGetter = localStorage.getItem('name');
+	fButton.onclick = function(){
+		fName = feedName.value;
+        coName = comName.value;
+        feedback = myFeed.value;
+        if(fName && coName && feedback !== ""){
+        	if(coName == nameGetter){
+        		localStorage.setItem('fName',fName);
+        		localStorage.setItem('feedback',feedback);
+        		alert('you have successfully Submitted your Feedback');
+        	}else{
+        		alert("The Organisation name you Entered does not match the Name the registered Organisation check if the organisation you are referring to is registered on the client Page");
+        	}
+        }
+	}
+</script>
+</html>

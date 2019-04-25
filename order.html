@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Page</title>
+	<style type="text/css">
+	    body{
+	    	background-image: url(backblue.gif);
+	    }
+	    h1{
+	    	background-color: black;
+	    	color: white;
+	    	text-align: center;
+	    }
+		form{
+			font-size: 20px;
+			text-align: center;
+		}
+		#fpar{
+			font-size: 20px;
+		}
+		#gohome{
+			font-size: 25px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+ <div>
+ 	<h1>Fortune Consultancy</h1>
+ 	<h2>This is Where a customer press orders to a registered business organisation</h2>
+ 	<p id="fpar">Fill the Form Below to order A product from a registered organisation: </p>
+ 	<form method="post">
+ 		Enter Your Name :<br>
+ 		<input type="textarea" name="oName" id ="oName"><br>
+ 		Enter name of registered organisation you are Ordering From : <br>
+ 		<input type="text" name="orgaName" id="orgaName"><br>
+ 		Enter your Address:<br>
+ 		<input type="textarea" name="oAddress" id ="oAddress"><br>
+ 		Enter The Product You want to Order:<br>
+ 		<textarea cols ="35" name="oProduct" id="oProduct"></textarea><br>
+ 		<button type="button" id="oButton">Submit</button>
+ 	</form>
+ </div><br><br><br><br><br><br>
+ <p id ="gohome"><a href ="index.html">Home</a></p>
+</body>
+<script type="text/javascript">
+	const oName = document.getElementById("oName");
+	const orgaName = document.getElementById("orgaName");
+	const oAddress = document.getElementById("oAddress");
+	const oProduct = document.getElementById("oProduct");
+	const oButton = document.getElementById("oButton");
+	const getName = localStorage.getItem('name');//taking the value of registered organisation name
+ 	oButton.onclick = function(){
+		namer = oName.value;
+		orgNamer = orgaName.value;
+        addresser = oAddress.value;
+        product = oProduct.value;
+        if(namer && orgNamer && addresser && product !== ""){//making sure that the customer enters all fields
+               if(orgNamer == getName){//making sure that the customer Enters a name of a registered organisation
+               //saving to local Storage
+               localStorage.setItem('namer',namer);
+               localStorage.setItem('addresser',addresser);
+               localStorage.setItem('product',product);
+               alert('You Have Successfully Ordered');
+               }
+               else{
+        	   alert("The Organisation name you Entered does not match the Name the registered Organisation check if the organisation is registered on the client page");
+               }	      	
+       };
+   }
+</script>
+</html>

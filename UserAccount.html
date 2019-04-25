@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Organisation Account</title>
+	<style>
+	   body{
+	   	background-image: url(backblue.gif);
+	   }
+	   h2{
+	   	margin-top: 0;
+	   	text-align: center;
+	   	background-color: #142b47;
+	   	color: white;
+	   }
+	   h3{
+	   	font-size: 25px;
+	   }
+	   #orderOutput{
+	   	font-size: 20px;
+	   	text-align: center;
+	   }
+	   #feedOutput{
+	   	font-size: 20px;
+	   	text-align: center;
+	   }
+    </style>
+</head>
+<body>
+   <h2>Your Organisation Have Successfully Registered and this is your account Page<br>
+   where you will receive Order and Feedback from Customers</h2>
+   <br><br><br>
+   	<h3>This is Where You Will See the details about your orders :</h3>
+   	<p id ="orderOutput"></p>
+   <br><br>
+   	<h3>This is where You Will See Details about feedback from customer : </h3>
+   	<p id ="feedOutput"></p>
+</body>
+<script type="text/javascript">
+	const orderOutput = document.getElementById("orderOutput");
+	const feedOutput = document.getElementById("feedOutput");
+	//declared to receive orders from customers
+	const custoName = localStorage.getItem('namer');
+	const custoAddress = localStorage.getItem('addresser');
+	const orderProduct = localStorage.getItem('product');
+	//declared to receive feedback from customer
+	const feedClient = localStorage.getItem('fName');
+	const myFeedback = localStorage.getItem('feedback');
+	orderOutput.innerHTML = "Product: " + orderProduct + " ,From: " + custoName + " ,customer's address: " + custoAddress;
+	feedOutput.innerHTML = "FEEDBACK: " + myFeedback + " ,From: " + feedClient; 
+</script>
+</html>

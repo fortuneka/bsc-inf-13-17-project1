@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+	<style type="text/css">
+		body{
+			background-image: url(backblue.gif);
+		}
+		.fbody{
+			color: white;
+			text-align: center;
+		}
+		h2{
+			
+			background-color: #142b47;
+			padding-top: 10px;
+			padding-bottom: 10px; 
+		}
+        #firstp{
+        	font-size: 25px;
+        	color: red;
+        }
+        form{
+        	font-size: 20px;
+        	color: blue;
+        }
+        fieldset{
+        	border:2px solid blue;
+        	margin-right: 2px;
+        }
+        #tohome{
+        	font-size: 25px;
+        	text-align: center;
+        }
+        #move{
+        	background-color: #142b47;
+       		font-size: 20px;
+       		color: white;
+        }
+	</style>
+</head>
+<body>
+	<div class ="fbody">
+		<h2 align ="center">Fortune Consultancy</h2>
+		<p id ="firstp"><u><b>Fill the form below to Register your Organisation inorder to use Fortune consultancy website : </b></u></p>
+        <form method="post">
+        	Enter Your Organisation Name: <br>
+        	<input type="text" name="orgName" id ="orgName" autocomplete="off"><br>
+        	Enter Your Email Address:<br>
+        	<input type="text" name="orgMail" id ="orgMail" autocomplete="off"><br>
+        	Enter Your Physical Address:<br>
+        	<input type="text" name="orgAddress" id ="orgAddress" autocomplete="off"><br>
+        	Describe Your Business:<br>
+        	<textarea rol="3" cols="50"name="orgDetails" id ="orgDetails" autocomplete="off"></textarea><br>
+        	<button type="button" id ="myButton">Register</button>
+        </form>
+	</div>
+    <br><br><br><br><br><br><br><br>
+     <marquee id ="move"><b>FORTUNE CONSULTANCY------AN ONLINE PLATFORM WHERE BUSINESS COMPANIES IN MALAWI CAN GET ORDERS AND FEEDBACK FROM THEIR CUSTOMERS<b></marquee>
+    <p id ="tohome"><a href ="client.html">Clients</a></p>
+</body>
+<script src ="myScript.js" type="text/javascript"></script>
+</html>
